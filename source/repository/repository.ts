@@ -42,6 +42,7 @@ class Repository {
         const clientDb = await client.connect();
         const db = clientDb.db("uol-chat");
 
+        console.log({ from: name, to: toUser, text: text, type: typeMessage, time: dayjs().format("HH:MM:ss") });
         await db.collection("message").insertOne({ from: name, to: toUser, text: text, type: typeMessage, time: dayjs().format("HH:MM:ss") });
         clientDb.close();
     }

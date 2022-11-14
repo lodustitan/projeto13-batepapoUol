@@ -7,7 +7,7 @@ export class MessagesController implements IMessagesController {
     async createMessageParticipant(req: Request, res: Response): Promise<void>
     {
         const headers = res.locals.headers;
-        const name = res.locals.name;
+        const name = res.locals.user;
 
         await repository.addMessage(name, headers.text, headers.type, headers.to);
         res.status(HTTPStatusCodes.Created).send("Criado");

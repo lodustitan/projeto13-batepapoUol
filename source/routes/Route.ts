@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-setInterval(controllers.update.deleteAFKusers, 1000 * 15);
+// setInterval(controllers.update.deleteAFKusers, 1000 * 15);
 
 /* Rotas Express.js */
 app.post("/status", middleware.verifyParticipantIsValid, controllers.participants.sendStatus);
